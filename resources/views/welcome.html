@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input type="number" id="inputNumber" oninput="createSelects()">
+<div id="selects"></div>
+
+<script>
+function createSelects() {
+  var number = document.getElementById("inputNumber").value;
+  var selectsDiv = document.getElementById("selects");
+  selectsDiv.innerHTML = ""; // Reset selectsDiv
+
+  for (var i = 1; i <= number; i++) {
+    var select = document.createElement("select");
+    select.setAttribute("name", "select" + i);
+    select.setAttribute("id", "select" + i);
+
+    // Add options to the select element
+    var option = document.createElement("option");
+    option.text = "Option 1";
+    option.value = "option1";
+    select.appendChild(option);
+
+    var option2 = document.createElement("option");
+    option2.text = "Option 2";
+    option2.value = "option2";
+    select.appendChild(option2);
+
+    // Add more options as needed
+
+    selectsDiv.appendChild(select);
+  }
+}
+</script>
+
+</body>
+</html>
